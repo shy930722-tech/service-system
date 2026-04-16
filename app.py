@@ -46,13 +46,100 @@ html = """
 <html>
 <head>
     <title>勇闯泰兰德业务后台</title>
-    <style>
-        body { font-family: Arial; padding: 20px; }
-        input, select, button { margin: 5px; padding: 8px; }
-        table { border-collapse: collapse; width: 100%; margin-top: 15px; }
-        table, th, td { border: 1px solid #ccc; padding: 8px; }
-        .card { background: #f4f4f4; padding: 10px; margin: 10px 0; }
-    </style>
+   <style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    margin: 0;
+    padding: 20px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    margin-right: 15px;
+}
+
+h1 {
+    color: #333;
+}
+
+.cards {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.card {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+form {
+    background: white;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+input, select {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    background: #4f46e5;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #4338ca;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+th {
+    background: #4f46e5;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+a {
+    color: red;
+    text-decoration: none;
+}
+</style>
 </head>
 <body>
     <h1>勇闯泰兰德业务后台</h1>
