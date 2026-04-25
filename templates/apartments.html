@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/static/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
 <div class="sidebar">
-    <h2>业务后台系统</h2>
+    <h2>业务后台</h2>
     <a href=" ">仪表盘</a >
-    <a href="/customers">客户预约</a >
+    <a href="/customers">客户管理</a >
+    <a href="/landlords">房东管理</a >
     <a href="/apartments">公寓管理</a >
     <a href="/finance">财务统计</a >
 </div>
@@ -18,31 +19,36 @@
     <h1>公寓管理</h1>
 
     <div class="table-box">
-        <table>
-            <tr>
-                <th>公寓</th>
-                <th>状态</th>
-                <th>客户</th>
-                <th>租金</th>
-                <th>成本</th>
-                <th>利润</th>
-                <th>入住日期</th>
-                <th>到期日期</th>
-            </tr>
+    <table>
+        <tr>
+            <th>公寓</th>
+            <th>状态</th>
+            <th>客户</th>
+            <th>租金</th>
+            <th>成本</th>
+            <th>利润</th>
+            <th>到期日期</th>
+            <th>操作</th>
+        </tr>
 
-            {% for row in data %}
-            <tr>
-                <td>{{ row[1] }}</td>
-                <td>{{ row[2] }}</td>
-                <td>{{ row[3] }}</td>
-                <td>{{ row[4] }}</td>
-                <td>{{ row[5] }}</td>
-                <td>{{ row[6] }}</td>
-                <td>{{ row[7] }}</td>
-                <td>{{ row[8] }}</td>
-            </tr>
-            {% endfor %}
-        </table>
+        {% for row in data %}
+        <tr>
+            <form method="post">
+                <td>{{ row["name"] }}</td>
+                <td><input name="status" value="{{ row['status'] }}"></td>
+                <td><input name="tenant" value="{{ row['tenant'] }}"></td>
+                <td><input name="rent" value="{{ row['rent'] }}"></td>
+                <td><input name="cost" value="{{ row['cost'] }}"></td>
+                <td><input name="profit" value="{{ row['profit'] }}"></td>
+                <td><input name="checkout" value="{{ row['checkout'] }}"></td>
+                <td>
+                    <input type="hidden" name="id" value="{{ row['id'] }}">
+                    <button type="submit">保存</button>
+                </td>
+            </form>
+        </tr>
+        {% endfor %}
+    </table>
     </div>
 </div>
 
