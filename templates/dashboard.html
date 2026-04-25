@@ -1,59 +1,35 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fb;
-}
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
 
-.sidebar {
-    width: 250px;
-    height: 100vh;
-    background: #1e1b4b;
-    color: white;
-    position: fixed;
-    padding: 20px;
-    overflow-y: auto;
-}
+<div class="sidebar">
+<h2>业务后台系统</h2>
+<a href=" ">仪表盘</a >
+<a href="/customers">客户预约找房</a >
+<a href="/pending">拟找房客户</a >
+<a href="/landlords">房东信息</a >
+<a href="/apartments">公寓管理</a >
+<a href="/cars">车辆业务</a >
+<a href="/visa">签证业务</a >
+<a href="/errands">跑腿业务</a >
+<a href="/finance">财务统计</a >
+</div>
 
-.sidebar h2 {
-    margin-bottom: 20px;
-}
+<div class="main">
+<h1>仪表盘</h1>
 
-.menu-title {
-    margin-top: 15px;
-    margin-bottom: 8px;
-    font-size: 14px;
-    color: #a5b4fc;
-}
+<div class="cards">
+<div class="card">总客户数：{{ total_customers }}</div>
+<div class="card">拟找房：{{ pending_count }}</div>
+<div class="card">房东数：{{ landlord_count }}</div>
+<div class="card">已出租：{{ rented_count }}</div>
+<div class="card">总利润：{{ total_profit }}</div>
+</div>
+</div>
 
-.sidebar a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    margin-bottom: 5px;
-    border-radius: 8px;
-}
-
-.sidebar a:hover {
-    background: #312e81;
-}
-
-.main {
-    margin-left: 270px;
-    padding: 20px;
-}
-
-.cards {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.card {
-    flex: 1;
-    min-width: 180px;
-    background: linear-gradient(135deg,#4f46e5,#7c3aed);
-    color: white;
-    padding: 20px;
-    border-radius: 15px;
-}
+</body>
+</html>
