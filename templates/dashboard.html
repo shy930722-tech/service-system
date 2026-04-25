@@ -1,59 +1,59 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>业务后台</title>
-    <link rel="stylesheet" href="/static/style.css">
-</head>
-<body>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+}
 
-<div class="sidebar">
-    <h2>业务后台系统</h2>
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #1e1b4b;
+    color: white;
+    position: fixed;
+    padding: 20px;
+    overflow-y: auto;
+}
 
-    <div class="menu-group">
-        <div class="menu-title">首页</div>
-        <a href=" ">仪表盘</a >
-    </div>
+.sidebar h2 {
+    margin-bottom: 20px;
+}
 
-    <div class="menu-group">
-        <div class="menu-title">房产服务</div>
-        <a href="/customers">客户预约找房</a >
-        <a href="/pending">拟找房客户</a >
-        <a href="/landlords">房东信息</a >
-        <a href="/apartments">公寓出租情况</a >
-    </div>
+.menu-title {
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #a5b4fc;
+}
 
-    <div class="menu-group">
-        <div class="menu-title">车辆服务</div>
-        <a href="/cars">买车客户</a >
-        <a href="/rentcars">租车客户</a >
-    </div>
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
 
-    <div class="menu-group">
-        <div class="menu-title">签证服务</div>
-        <a href="/visa">签证客户</a >
-    </div>
+.sidebar a:hover {
+    background: #312e81;
+}
 
-    <div class="menu-group">
-        <div class="menu-title">跑腿服务</div>
-        <a href="/errands">跑腿订单</a >
-    </div>
+.main {
+    margin-left: 270px;
+    padding: 20px;
+}
 
-    <div class="menu-group">
-        <div class="menu-title">财务统计</div>
-        <a href="/finance">利润统计</a >
-    </div>
-</div>
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
-<div class="main">
-    <h1>仪表盘</h1>
-
-    <div class="cards">
-        <div class="card">总客户数：{{ total_customers }}</div>
-        <div class="card">总订单数：{{ total_orders }}</div>
-        <div class="card">房源出租：{{ rented_count }}</div>
-        <div class="card">总利润：{{ total_profit }}</div>
-    </div>
-</div>
-
-</body>
-</html>
+.card {
+    flex: 1;
+    min-width: 180px;
+    background: linear-gradient(135deg,#4f46e5,#7c3aed);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
