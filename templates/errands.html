@@ -1,1 +1,22 @@
-
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="main">
+<h1>跑腿业务</h1>
+<table>
+<tr><th>ID</th><th>客户</th><th>事项</th><th>利润</th></tr>
+{% for row in data %}
+<tr>
+<td>{{ row[0] }}</td>
+<td>{{ row[1] }}</td>
+<td>{{ row[2] }}</td>
+<td>{{ row[3] }}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+</body>
+</html>
