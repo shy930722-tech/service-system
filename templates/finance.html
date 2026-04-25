@@ -1,29 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/static/style.css">
-</head>
+<head><link rel="stylesheet" href="/static/style.css"></head>
 <body>
-
-<div class="sidebar">
-    <h2>业务后台</h2>
-    <a href=" ">仪表盘</a >
-    <a href="/customers">客户管理</a >
-    <a href="/landlords">房东管理</a >
-    <a href="/apartments">公寓管理</a >
-    <a href="/finance">财务统计</a >
-</div>
-
+{% include 'dashboard_nav.html' %}
 <div class="main">
-    <h1>财务统计</h1>
-
-    <div class="cards">
-        <div class="card">客户利润：{{ customer_profit }}</div>
-        <div class="card">公寓利润：{{ apartment_profit }}</div>
-        <div class="card">总利润：{{ total }}</div>
-    </div>
+<h1>财务统计</h1>
+<div class="cards">
+<div class="card">客户利润 {{ customer_profit }}</div>
+<div class="card">车辆利润 {{ car_profit }}</div>
+<div class="card">签证利润 {{ visa_profit }}</div>
+<div class="card">跑腿利润 {{ errand_profit }}</div>
+<div class="card">总利润 {{ total_profit }}</div>
 </div>
-
+</div>
 </body>
 </html>
