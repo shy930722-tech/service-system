@@ -13,16 +13,61 @@
     <a href="/landlords">房东管理</a >
     <a href="/apartments">公寓管理</a >
     <a href="/finance">财务统计</a >
-    <a href="/logout">退出</a >
 </div>
 
 <div class="main">
-    <h1>仪表盘</h1>
+    <h1>客户管理</h1>
 
-    <div class="cards">
-        <div class="card">客户总数：{{ customer_count }}</div>
-        <div class="card">已出租公寓：{{ rented_count }}</div>
-        <div class="card">总利润：{{ total_profit }}</div>
+    <form method="post" class="form-box">
+        <input name="name" placeholder="客户姓名">
+        <input name="wechat" placeholder="微信">
+        <input name="phone" placeholder="电话">
+        <input name="checkin" placeholder="入住日期">
+        <input name="room_type" placeholder="房型">
+        <input name="budget" placeholder="预算">
+        <input name="status" placeholder="状态">
+        <input name="follow_up" placeholder="跟进记录">
+        <input name="profit" placeholder="利润">
+        <button type="submit">新增客户</button>
+    </form>
+
+    <form method="get" class="search-box">
+        <input name="keyword" placeholder="搜索客户姓名">
+        <button type="submit">搜索</button>
+    </form>
+
+    <div class="table-box">
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th>微信</th>
+            <th>电话</th>
+            <th>入住日期</th>
+            <th>房型</th>
+            <th>预算</th>
+            <th>状态</th>
+            <th>跟进</th>
+            <th>利润</th>
+            <th>操作</th>
+        </tr>
+
+        {% for row in data %}
+        <tr>
+            <td>{{ row["name"] }}</td>
+            <td>{{ row["wechat"] }}</td>
+            <td>{{ row["phone"] }}</td>
+            <td>{{ row["checkin"] }}</td>
+            <td>{{ row["room_type"] }}</td>
+            <td>{{ row["budget"] }}</td>
+            <td>{{ row["status"] }}</td>
+            <td>{{ row["follow_up"] }}</td>
+            <td>{{ row["profit"] }}</td>
+            <td>
+                <a href="/delete_customer/{{ row['id'] }}">删除</a >
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
     </div>
 </div>
 
