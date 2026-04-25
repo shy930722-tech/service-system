@@ -7,14 +7,10 @@ body{
 .sidebar{
     width:220px;
     height:100vh;
-    position:fixed;
     background:#1e1b4b;
-    color:white;
+    position:fixed;
     padding:20px;
-}
-
-.sidebar h2{
-    margin-bottom:20px;
+    color:white;
 }
 
 .sidebar a{
@@ -37,22 +33,31 @@ body{
 
 .cards{
     display:flex;
-    flex-wrap:wrap;
     gap:15px;
+    flex-wrap:wrap;
 }
 
 .card{
-    min-width:180px;
+    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    color:white;
     padding:20px;
     border-radius:15px;
-    color:white;
-    background:linear-gradient(135deg,#4f46e5,#7c3aed);
+    min-width:180px;
+}
+
+.form-box input,
+.form-box button,
+.search-box input,
+.search-box button{
+    padding:10px;
+    margin:5px;
 }
 
 .table-box{
     overflow-x:auto;
     background:white;
     border-radius:12px;
+    margin-top:20px;
 }
 
 table{
@@ -71,19 +76,6 @@ td{
     border-bottom:1px solid #eee;
 }
 
-.search-box{
-    margin-bottom:20px;
-}
-
-.search-box input{
-    padding:10px;
-    width:250px;
-}
-
-.search-box button{
-    padding:10px 20px;
-}
-
 .login-page{
     display:flex;
     justify-content:center;
@@ -92,9 +84,9 @@ td{
 }
 
 .login-box{
-    width:320px;
-    padding:25px;
+    width:300px;
     background:white;
+    padding:25px;
     border-radius:15px;
     box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
