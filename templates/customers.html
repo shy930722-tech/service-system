@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="sidebar">
+<h2>业务后台系统</h2>
+<a href=" ">仪表盘</a >
+<a href="/customers">客户预约找房</a >
+<a href="/pending">拟找房客户</a >
+<a href="/landlords">房东信息</a >
+<a href="/apartments">公寓出租情况</a >
+</div>
+
+<div class="main">
+<h1>{{ title }}</h1>
+
+<form method="post">
+    <input name="name" placeholder="客户姓名">
+    <input name="wechat" placeholder="微信">
+    <input name="checkin" placeholder="入住日期">
+    <input name="room_type" placeholder="房型要求">
+    <input name="duration" placeholder="租期多久">
+    <input name="area" placeholder="哪里房子">
+    <input name="budget" placeholder="预算多少">
+    <input name="request" placeholder="特殊要求">
+    <input name="profit" placeholder="预计利润">
+    <button type="submit">新增</button>
+</form>
+
+<table>
+<tr>
+<th>姓名</th>
+<th>微信</th>
+<th>入住日期</th>
+<th>房型</th>
+<th>租期</th>
+<th>区域</th>
+<th>预算</th>
+<th>要求</th>
+<th>利润</th>
+</tr>
+
+{% for row in data %}
+<tr>
+<td>{{ row[1] }}</td>
+<td>{{ row[2] }}</td>
+<td>{{ row[3] }}</td>
+<td>{{ row[4] }}</td>
+<td>{{ row[5] }}</td>
+<td>{{ row[6] }}</td>
+<td>{{ row[7] }}</td>
+<td>{{ row[8] }}</td>
+<td>{{ row[9] }}</td>
+</tr>
+{% endfor %}
+</table>
+
+</div>
+</body>
+</html>
