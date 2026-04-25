@@ -1,39 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+
 <div class="sidebar">
-<h2>业务后台系统</h2>
-<a href=" ">仪表盘</a >
-<a href="/apartments">公寓管理</a >
+    <h2>业务后台系统</h2>
+    <a href=" ">仪表盘</a >
+    <a href="/customers">客户预约</a >
+    <a href="/apartments">公寓管理</a >
+    <a href="/finance">财务统计</a >
 </div>
 
 <div class="main">
-<h1>公寓管理</h1>
+    <h1>公寓管理</h1>
 
-<table>
-<tr>
-<th>ID</th><th>公寓</th><th>状态</th><th>客户</th>
-<th>租金</th><th>成本</th><th>利润</th>
-<th>入住</th><th>到期</th>
-</tr>
+    <div class="table-box">
+        <table>
+            <tr>
+                <th>公寓</th>
+                <th>状态</th>
+                <th>客户</th>
+                <th>租金</th>
+                <th>成本</th>
+                <th>利润</th>
+                <th>入住日期</th>
+                <th>到期日期</th>
+            </tr>
 
-{% for row in data %}
-<tr>
-<td>{{ row[0] }}</td>
-<td>{{ row[1] }}</td>
-<td>{{ row[2] }}</td>
-<td>{{ row[3] }}</td>
-<td>{{ row[4] }}</td>
-<td>{{ row[5] }}</td>
-<td>{{ row[6] }}</td>
-<td>{{ row[7] }}</td>
-<td>{{ row[8] }}</td>
-</tr>
-{% endfor %}
-</table>
+            {% for row in data %}
+            <tr>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+                <td>{{ row[7] }}</td>
+                <td>{{ row[8] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
 </div>
+
 </body>
 </html>
