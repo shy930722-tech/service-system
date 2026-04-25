@@ -4,45 +4,33 @@
 <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-
 <div class="sidebar">
 <h2>业务后台系统</h2>
 <a href=" ">仪表盘</a >
-<a href="/customers">客户预约找房</a >
-<a href="/pending">拟找房客户</a >
 <a href="/landlords">房东信息</a >
-<a href="/apartments">公寓出租情况</a >
 </div>
 
 <div class="main">
 <h1>房东信息</h1>
 
-<form method="post">
-    <input name="name" placeholder="房东姓名">
-    <input name="contact" placeholder="微信/电话">
-    <input name="address" placeholder="房源位置">
-    <input name="note" placeholder="备注">
-    <button type="submit">新增</button>
-</form>
-
 <table>
 <tr>
-<th>姓名</th>
-<th>联系方式</th>
-<th>地址</th>
-<th>备注</th>
+<th>ID</th><th>姓名</th><th>联系方式</th><th>公寓</th>
+<th>地址</th><th>底价</th><th>备注</th>
 </tr>
 
 {% for row in data %}
 <tr>
+<td>{{ row[0] }}</td>
 <td>{{ row[1] }}</td>
 <td>{{ row[2] }}</td>
 <td>{{ row[3] }}</td>
 <td>{{ row[4] }}</td>
+<td>{{ row[5] }}</td>
+<td>{{ row[6] }}</td>
 </tr>
 {% endfor %}
 </table>
-
 </div>
 </body>
 </html>
