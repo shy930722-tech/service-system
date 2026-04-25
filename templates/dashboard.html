@@ -1,28 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/static/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
 <div class="sidebar">
-    <h2>业务后台系统</h2>
+    <h2>业务后台</h2>
     <a href=" ">仪表盘</a >
-    <a href="/customers">客户预约</a >
+    <a href="/customers">客户管理</a >
+    <a href="/landlords">房东管理</a >
     <a href="/apartments">公寓管理</a >
     <a href="/finance">财务统计</a >
-    <a href="/logout">退出登录</a >
+    <a href="/logout">退出</a >
 </div>
 
 <div class="main">
     <h1>仪表盘</h1>
 
     <div class="cards">
-        <div class="card">总客户数：{{ total_customers }}</div>
-        <div class="card">拟找房：{{ pending_count }}</div>
-        <div class="card">房东数：{{ landlord_count }}</div>
-        <div class="card">已出租：{{ rented_count }}</div>
+        <div class="card">客户总数：{{ customer_count }}</div>
+        <div class="card">已出租公寓：{{ rented_count }}</div>
         <div class="card">总利润：{{ total_profit }}</div>
     </div>
 </div>
