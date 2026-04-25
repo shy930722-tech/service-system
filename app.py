@@ -1,39 +1,59 @@
-from flask import Flask, render_template
-import sqlite3
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+}
 
-app = Flask(__name__)
+.sidebar {
+    width: 250px;
+    height: 100vh;
+    background: #1e1b4b;
+    color: white;
+    position: fixed;
+    padding: 20px;
+    overflow-y: auto;
+}
 
-@app.route('/')
-def dashboard():
-    conn = sqlite3.connect("data.db")
-    c = conn.cursor()
+.sidebar h2 {
+    margin-bottom: 20px;
+}
 
-    c.execute("CREATE TABLE IF NOT EXISTS customers(id INTEGER PRIMARY KEY)")
-    c.execute("CREATE TABLE IF NOT EXISTS pending(id INTEGER PRIMARY KEY)")
-    c.execute("CREATE TABLE IF NOT EXISTS apartments(id INTEGER PRIMARY KEY,status TEXT,profit REAL)")
+.menu-title {
+    margin-top: 15px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #a5b4fc;
+}
 
-    c.execute("SELECT COUNT(*) FROM customers")
-    total_customers = c.fetchone()[0]
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
 
-    c.execute("SELECT COUNT(*) FROM pending")
-    pending_count = c.fetchone()[0]
+.sidebar a:hover {
+    background: #312e81;
+}
 
-    c.execute("SELECT COUNT(*) FROM apartments WHERE status='已出租'")
-    rented_count = c.fetchone()[0]
+.main {
+    margin-left: 270px;
+    padding: 20px;
+}
 
-    c.execute("SELECT SUM(profit) FROM apartments")
-    total_profit = c.fetchone()[0] or 0
+.cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
 
-    conn.commit()
-    conn.close()
-
-    return render_template(
-        "dashboard.html",
-        total_customers=total_customers,
-        pending_count=pending_count,
-        rented_count=rented_count,
-        total_profit=total_profit
-    )
-
-if __name__ == "__main__":
-    app.run()
+.card {
+    flex: 1;
+    min-width: 180px;
+    background: linear-gradient(135deg,#4f46e5,#7c3aed);
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
