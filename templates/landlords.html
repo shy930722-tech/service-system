@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
+
 <div class="sidebar">
-<h2>业务后台系统</h2>
-<a href=" ">仪表盘</a >
-<a href="/landlords">房东信息</a >
+    <h2>业务后台</h2>
+    <a href=" ">仪表盘</a >
+    <a href="/customers">客户管理</a >
+    <a href="/landlords">房东管理</a >
+    <a href="/apartments">公寓管理</a >
+    <a href="/finance">财务统计</a >
 </div>
 
 <div class="main">
-<h1>房东信息</h1>
+    <h1>房东管理</h1>
 
-<table>
-<tr>
-<th>ID</th><th>姓名</th><th>联系方式</th><th>公寓</th>
-<th>地址</th><th>底价</th><th>备注</th>
-</tr>
+    <form method="post" class="form-box">
+        <input name="name" placeholder="房东姓名">
+        <input name="contact" placeholder="联系方式">
+        <input name="apartment" placeholder="公寓名称">
+        <input name="rent" placeholder="房东租金">
+        <button type="submit">新增房东</button>
+    </form>
 
-{% for row in data %}
-<tr>
-<td>{{ row[0] }}</td>
-<td>{{ row[1] }}</td>
-<td>{{ row[2] }}</td>
-<td>{{ row[3] }}</td>
-<td>{{ row[4] }}</td>
-<td>{{ row[5] }}</td>
-<td>{{ row[6] }}</td>
-</tr>
-{% endfor %}
-</table>
+    <div class="table-box">
+    <table>
+        <tr>
+            <th>姓名</th>
+            <th>联系方式</th>
+            <th>公寓</th>
+            <th>租金</th>
+        </tr>
+
+        {% for row in data %}
+        <tr>
+            <td>{{ row["name"] }}</td>
+            <td>{{ row["contact"] }}</td>
+            <td>{{ row["apartment"] }}</td>
+            <td>{{ row["rent"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    </div>
 </div>
+
 </body>
 </html>
