@@ -1,75 +1,31 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-
 <div class="sidebar">
-    <h2>业务后台</h2>
-    <a href=" ">仪表盘</a >
-    <a href="/customers">客户管理</a >
-    <a href="/landlords">房东管理</a >
-    <a href="/apartments">公寓管理</a >
-    <a href="/finance">财务统计</a >
+<h2>业务后台</h2>
+<a href=" ">仪表盘</a >
+<a href="/customers">客户预约</a >
+<a href="/landlords">房东信息</a >
+<a href="/cars">车辆业务</a >
+<a href="/visa">签证业务</a >
+<a href="/errands">跑腿业务</a >
+<a href="/finance">财务统计</a >
+<a href="/logout">退出</a >
 </div>
 
 <div class="main">
-    <h1>客户管理</h1>
-
-    <form method="post" class="form-box">
-        <input name="name" placeholder="客户姓名">
-        <input name="wechat" placeholder="微信">
-        <input name="phone" placeholder="电话">
-        <input name="checkin" placeholder="入住日期">
-        <input name="room_type" placeholder="房型">
-        <input name="budget" placeholder="预算">
-        <input name="status" placeholder="状态">
-        <input name="follow_up" placeholder="跟进记录">
-        <input name="profit" placeholder="利润">
-        <button type="submit">新增客户</button>
-    </form>
-
-    <form method="get" class="search-box">
-        <input name="keyword" placeholder="搜索客户姓名">
-        <button type="submit">搜索</button>
-    </form>
-
-    <div class="table-box">
-    <table>
-        <tr>
-            <th>姓名</th>
-            <th>微信</th>
-            <th>电话</th>
-            <th>入住日期</th>
-            <th>房型</th>
-            <th>预算</th>
-            <th>状态</th>
-            <th>跟进</th>
-            <th>利润</th>
-            <th>操作</th>
-        </tr>
-
-        {% for row in data %}
-        <tr>
-            <td>{{ row["name"] }}</td>
-            <td>{{ row["wechat"] }}</td>
-            <td>{{ row["phone"] }}</td>
-            <td>{{ row["checkin"] }}</td>
-            <td>{{ row["room_type"] }}</td>
-            <td>{{ row["budget"] }}</td>
-            <td>{{ row["status"] }}</td>
-            <td>{{ row["follow_up"] }}</td>
-            <td>{{ row["profit"] }}</td>
-            <td>
-                <a href="/delete_customer/{{ row['id'] }}">删除</a >
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
-    </div>
+<h1>仪表盘</h1>
+<div class="cards">
+<div class="card">客户预约 {{ customer_count }}</div>
+<div class="card">房东信息 {{ landlord_count }}</div>
+<div class="card">车辆业务 {{ car_count }}</div>
+<div class="card">签证业务 {{ visa_count }}</div>
+<div class="card">跑腿业务 {{ errand_count }}</div>
+<div class="card">总利润 {{ total_profit }}</div>
 </div>
-
+</div>
 </body>
 </html>
