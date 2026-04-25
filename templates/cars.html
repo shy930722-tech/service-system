@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="sidebar">
+<h2>业务后台系统</h2>
+<a href=" ">仪表盘</a >
+<a href="/apartments">公寓管理</a >
+</div>
 
+<div class="main">
+<h1>公寓管理</h1>
+
+<table>
+<tr>
+<th>ID</th><th>公寓</th><th>状态</th><th>客户</th>
+<th>租金</th><th>成本</th><th>利润</th>
+<th>入住</th><th>到期</th>
+</tr>
+
+{% for row in data %}
+<tr>
+<td>{{ row[0] }}</td>
+<td>{{ row[1] }}</td>
+<td>{{ row[2] }}</td>
+<td>{{ row[3] }}</td>
+<td>{{ row[4] }}</td>
+<td>{{ row[5] }}</td>
+<td>{{ row[6] }}</td>
+<td>{{ row[7] }}</td>
+<td>{{ row[8] }}</td>
+</tr>
+{% endfor %}
+</table>
+</div>
+</body>
+</html>
