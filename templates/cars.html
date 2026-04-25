@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" href="/static/style.css">
-</head>
+<head><link rel="stylesheet" href="/static/style.css"></head>
 <body>
+{% include 'dashboard_nav.html' %}
 <div class="main">
 <h1>车辆业务</h1>
+<form method="post" class="form-box">
+<input name="name" placeholder="客户姓名">
+<input name="wechat" placeholder="微信">
+<input name="car_model" placeholder="车型">
+<input name="plan" placeholder="方案">
+<input name="profit" placeholder="利润">
+<input name="note" placeholder="备注">
+<button type="submit">新增</button>
+</form>
 <table>
-<tr><th>ID</th><th>客户</th><th>微信</th><th>车型</th><th>利润</th><th>备注</th></tr>
+<tr><th>姓名</th><th>车型</th><th>利润</th></tr>
 {% for row in data %}
 <tr>
-<td>{{ row[0] }}</td>
-<td>{{ row[1] }}</td>
-<td>{{ row[2] }}</td>
-<td>{{ row[3] }}</td>
-<td>{{ row[4] }}</td>
-<td>{{ row[5] }}</td>
+<td>{{ row["name"] }}</td>
+<td>{{ row["car_model"] }}</td>
+<td>{{ row["profit"] }}</td>
 </tr>
 {% endfor %}
 </table>
