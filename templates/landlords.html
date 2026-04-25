@@ -1,51 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="/static/style.css">
-</head>
+<head><link rel="stylesheet" href="/static/style.css"></head>
 <body>
-
-<div class="sidebar">
-    <h2>业务后台</h2>
-    <a href=" ">仪表盘</a >
-    <a href="/customers">客户管理</a >
-    <a href="/landlords">房东管理</a >
-    <a href="/apartments">公寓管理</a >
-    <a href="/finance">财务统计</a >
-</div>
-
+{% include 'dashboard_nav.html' %}
 <div class="main">
-    <h1>房东管理</h1>
-
-    <form method="post" class="form-box">
-        <input name="name" placeholder="房东姓名">
-        <input name="contact" placeholder="联系方式">
-        <input name="apartment" placeholder="公寓名称">
-        <input name="rent" placeholder="房东租金">
-        <button type="submit">新增房东</button>
-    </form>
-
-    <div class="table-box">
-    <table>
-        <tr>
-            <th>姓名</th>
-            <th>联系方式</th>
-            <th>公寓</th>
-            <th>租金</th>
-        </tr>
-
-        {% for row in data %}
-        <tr>
-            <td>{{ row["name"] }}</td>
-            <td>{{ row["contact"] }}</td>
-            <td>{{ row["apartment"] }}</td>
-            <td>{{ row["rent"] }}</td>
-        </tr>
-        {% endfor %}
-    </table>
-    </div>
+<h1>房东信息</h1>
+<form method="post" class="form-box">
+<input name="name" placeholder="房东姓名">
+<input name="contact" placeholder="联系方式">
+<input name="apartment" placeholder="公寓">
+<input name="address" placeholder="地址">
+<input name="price" placeholder="底价">
+<input name="note" placeholder="备注">
+<button type="submit">新增</button>
+</form>
+<table>
+<tr><th>姓名</th><th>联系方式</th><th>公寓</th><th>底价</th></tr>
+{% for row in data %}
+<tr>
+<td>{{ row["name"] }}</td>
+<td>{{ row["contact"] }}</td>
+<td>{{ row["apartment"] }}</td>
+<td>{{ row["price"] }}</td>
+</tr>
+{% endfor %}
+</table>
 </div>
-
 </body>
 </html>
